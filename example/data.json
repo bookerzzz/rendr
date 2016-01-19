@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "one",
+    "Value": "1"
+  },
+  {
+    "Name": "two",
+    "Value": "2"
+  },
+  {
+    "Name": "three",
+    "Value": "3"
+  },
+  {
+    "Name": "four",
+    "Value": "4"
+  },
+  {
+    "Name": "one",
+    "Value": "1.0"
+  }
+]
