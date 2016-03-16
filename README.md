@@ -10,18 +10,21 @@ go install github.com/bookerzzz/rendr
 # Usage
 See the example folder for a complete overview.
 ```bash
-cd path/to/output/dir/
-rendr path/to/data.json path/to/template.tmpl path/to/output/dir/filename.ext
+rendr [--global(-g)='{"GlobalKey":"GlobalValue"}'] path/to/data.json path/to/template.tmpl path/to/output/dir/filename.ext
 ```
 
 You may also use data values from the data.json file entries so if you data contains
 ```js
 [
-  { "Filename": "myoutputfile.txt" }
+  {
+    "Dir", "my/output/dir",
+    "Filename": "myoutputfile.txt"
+  }
 ]
 ```
 you can run
 ```bash
-rendr path/to/data.json path/to/template.tmpl "{{ .Filename }}"
+rendr path/to/data.json path/to/template.tmpl "{{ .Dir }}/{{ .Filename }}"
 ```
-to create `./myoutputfile.txt` with results of `template.tmpl` after rendering
+to create `./my/output/dir/myoutputfile.txt` with results of `template.tmpl` after rendering.
+If the path to the output file doesn't exists, rendr will attempt to create it.

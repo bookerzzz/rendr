@@ -1,1 +1,4 @@
+{{ if .GlobName -}}
+var {{ .GlobName }} = {{ .GlobValue }}
+{{ end -}}
 var {{ .Name }} = {{ .Value }}
