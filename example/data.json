@@ -1,18 +1,26 @@
 [
   {
-    "Name": "one",
-    "Value": "1.0"
+    "FileName": "one.go",
+    "Name": "One",
+    "Value": "1.0",
+    "Unit": "{{ .DefaultUnit }}"
   },
   {
-    "Name": "two",
-    "Value": "2"
+    "FileName": "two.go",
+    "Name": "Two",
+    "Value": "2",
+    "Unit": "px"
   },
   {
-    "Name": "three",
-    "Value": "3"
+    "FileName": "three.go",
+    "Name": "Three",
+    "Value": "3",
+    "Unit": "{{ .DefaultUnit }}"
   },
   {
-    "Name": "four",
-    "Value": "4"
+    "FileName": "four.go",
+    "Name": "Four",
+    "Value": "4",
+    "Unit": "%"
   }
 ]

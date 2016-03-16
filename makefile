@@ -1,6 +1,6 @@
 
 example:
-	rendr --global='{"GlobName":"myglobal","GlobValue":"is the same everywhere"}' example/data.json example/template.tmpl "example/{{ .Name }}.go"
+	rendr --global='{"DefaultUnit":"cm"}' example/data.json example/template.tmpl "example/{{ .FileName }}"
 
 install:
 	go install .

@@ -1,4 +1,5 @@
-{{ if .GlobName -}}
-var {{ .GlobName }} = {{ .GlobValue }}
+// Generated {{ .FileName }}
+{{ if .Unit -}}
+var Unit{{ .Name }} = "{{ .Unit }}"
 {{ end -}}
-var {{ .Name }} = {{ .Value }}
+var Value{{ .Name }} = {{ .Value }}

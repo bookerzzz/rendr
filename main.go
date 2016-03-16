@@ -74,6 +74,17 @@ func main() {
 				fmt.Printf("Unable to unmarshal json with error '%s'\n", err.Error())
 				return
 			}
+			jstmpl, err := template.New("jstmpl").Parse(string(js))
+			if err != nil {
+				fmt.Printf("Unable to parse '%s' into a template with error '%s'\n", dataFile, err.Error())
+				return
+			}
+			jsb := bytes.Buffer{}
+			err = jstmpl.Execute(&jsb, dg)
+			if err != nil {
+				fmt.Printf("Unable to execute template with error '%s'\n", err.Error())
+			}
+			js = jsb.Bytes()
 		}
 
 		var dl []map[string]interface{}

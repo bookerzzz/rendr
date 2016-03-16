@@ -13,7 +13,7 @@ See the example folder for a complete overview.
 rendr [--global(-g)='{"GlobalKey":"GlobalValue"}'] path/to/data.json path/to/template.tmpl path/to/output/dir/filename.ext
 ```
 
-You may also use data values from the data.json file entries so if you data contains
+You may also use data values from the data.json file entries so if your data contains
 ```js
 [
   {
@@ -27,4 +27,18 @@ you can run
 rendr path/to/data.json path/to/template.tmpl "{{ .Dir }}/{{ .Filename }}"
 ```
 to create `./my/output/dir/myoutputfile.txt` with results of `template.tmpl` after rendering.
-If the path to the output file doesn't exists, rendr will attempt to create it.
+If the path to the output file doesn't exists, Rendr will attempt to create it.
+
+You may also use/inject the global values into the data.json file, so render will first apply global values to the given data.json file before parsing it and providing the resolved set of data to the template for execution.
+```bash
+rendr [--global(-g)='{"FileExt":"txt"}'] data.json path/to/template.tmpl path/to/output/dir/filename.ext
+```
+```js
+// data.json
+[
+  {
+    "Dir", "my/output/dir",
+    "Filename": "myoutputfile.{{ .FileExt }}"
+  }
+]
+```
